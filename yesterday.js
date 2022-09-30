@@ -252,6 +252,7 @@ async function loopE() {
     data: dataHtml,
     timeUpdated: timeUpdate,
   };
+  await page.close();
   browser.close();
   return JsonHtml;
 }
