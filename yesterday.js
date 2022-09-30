@@ -157,6 +157,18 @@ async function loopE() {
               if (styleValue == "rgb(82, 86, 192)") {
                 bgColorClass = "bgBlueClor";
               }
+              if (styleValue == "rgb(51, 204, 0)") {
+                bgColorClass = "bgGreenClor";
+              }
+              if (styleValue == "rgb(0, 255, 255)") {
+                bgColorClass = "bgBClor";
+              }
+              if (styleValue == "rgb(161, 165, 248)") {
+                bgColorClass = "bgPurpleClor";
+              }
+              
+
+              
             }
             // if (styleValue == "rgba(0, 0, 0, 0)") {
             //   bgColorClass = "bgNoClor";

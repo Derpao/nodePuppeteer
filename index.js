@@ -5,7 +5,7 @@ import cron from "node-cron";
 Object.defineProperty(Date.prototype, "YYYYMMDDHHMMSS", {
   value: function () {
     function pad2(n) {
-      // always returns a string
+      // always returns a string update v1
       return (n < 10 ? "0" : "") + n;
     }
 
@@ -157,6 +157,12 @@ async function loopE() {
               if (styleValue == "rgb(82, 86, 192)") {
                 bgColorClass = "bgBlueClor";
               }
+              if (styleValue == "rgb(51, 204, 0)") {
+                bgColorClass = "bgGreenClor";
+              }
+              if (styleValue == "rgb(0, 255, 255)") {
+                bgColorClass = "bgBClor";
+              }
             }
             // if (styleValue == "rgba(0, 0, 0, 0)") {
             //   bgColorClass = "bgNoClor";
@@ -218,7 +224,7 @@ async function loopE() {
                      <td width="180">ทีมเยือน</td>
                      <td width="55">ครึ่งแรก</td>
                      <td width="55">ผลบอล</td>
-                     <td width="270">ทรรศนะฟุตบอลวันนี้/ทีเด็ดบอลคืนนี้</td>
+                     <td width="280">ทรรศนะฟุตบอลวันนี้/ทีเด็ดบอลคืนนี้</td>
                      </tr>`;
         }
 
