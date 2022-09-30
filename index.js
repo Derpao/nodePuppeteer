@@ -5,7 +5,7 @@ import cron from "node-cron";
 Object.defineProperty(Date.prototype, "YYYYMMDDHHMMSS", {
   value: function () {
     function pad2(n) {
-      // always returns a string update v1
+      // always returns a string update v2
       return (n < 10 ? "0" : "") + n;
     }
 
