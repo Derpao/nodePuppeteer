@@ -264,7 +264,7 @@ async function getData() {
 //   console.log(data);
 // });
 
-cron.schedule("*/5 * * * * *", () => {
+cron.schedule("*/10 * * * * *", () => {
   getData().then((data) => {
     // console.log(data);
     mongoDb(data).catch(console.dir);
