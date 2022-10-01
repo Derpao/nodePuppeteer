@@ -10,11 +10,11 @@ Object.defineProperty(Date.prototype, "YYYYMMDDHHMMSS", {
     }
 
     return (
-      this.getFullYear() +
-      pad2(this.getMonth() + 1) +
-      pad2(this.getDate()) +
-      pad2(this.getHours()) +
-      pad2(this.getMinutes()) +
+      this.getFullYear() + '/' +
+      pad2(this.getMonth() + 1) +  '/' +
+      pad2(this.getDate()) +  ':' +
+      pad2(this.getHours()) + ':' +
+      pad2(this.getMinutes()) + ':' +
       pad2(this.getSeconds())
     );
   },
