@@ -37,7 +37,7 @@ async function loopE() {
       })
   );
 
-  console.log(row.length);
+  // console.log(row.length);
 
   for (let i = 1; i <= row.length; i++) {
     // for (let i=1; i <= 30; i++ ){
@@ -270,7 +270,7 @@ cron.schedule("*/10 * * * * *", () => {
     // console.log(data);
     mongoDb(data).catch(console.dir);
   });
-  console.log("running a task every 2sec ");
+  console.log("running a task every 10 sec ");
 });
 
 function timeMin() {
@@ -278,22 +278,22 @@ function timeMin() {
   const d = new Date();
   let minutes = d.getMinutes();
   const arrOfDigits = Array.from(String(minutes), Number);
-  console.log(arrOfDigits);
+  // console.log(arrOfDigits);
   let lastMi 
   if(arrOfDigits[1] != null){
-      console.log("not null");
+      // console.log("not null");
       
       lastMi = arrOfDigits[1];
-      console.log(lastMi);
+      // console.log(lastMi);
       
   } else {
-      console.log("null");
+      // console.log("null");
       lastMi = arrOfDigits[0];
-      console.log(lastMi);
+      // console.log(lastMi);
   }
 
   if (lastMi <= 4) {
-    console.log("less then 4");
+    // console.log("less then 4");
     return 1;
   } else {
     return 2;
@@ -306,12 +306,12 @@ async function mongoDb(data) {
   var mongoUrl2 = "mongodb+srv://derpao:Derpao1150@derpao.huipx1f.mongodb.net/football?retryWrites=true&w=majority";
 
 if (timeMin() == 1){
-  console.log(timeMin());
-  console.log("aaaaaaaaaaaa");
+  // console.log(timeMin());
+  // console.log("aaaaaaaaaaaa");
   finalUrlMongo = mongoUrl1
 } else {
-  console.log(timeMin());
-  console.log("oooooooooooooo");
+  // console.log(timeMin());
+  // console.log("oooooooooooooo");
   finalUrlMongo = mongoUrl2
 }
 
@@ -351,7 +351,7 @@ if (timeMin() == 1){
     );
 
     console.log(
-      `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`
+      `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s) ${timeUpdate}`
     );
   } finally {
     // Ensures that the client will close when you finish/error

@@ -37,7 +37,7 @@ async function loopE() {
       })
   );
 
-  console.log(row.length);
+  // console.log(row.length);
 
   for (let i = 1; i <= row.length; i++) {
     // for (let i=1; i <= 30; i++ ){
@@ -263,7 +263,7 @@ async function getData() {
   } catch (error) {
     console.log("error" + error);
   } finally {
-    console.log("done");
+    // console.log("done");
   }
 }
 
@@ -276,24 +276,24 @@ cron.schedule("0 * * * *", () => {
     // console.log(data);
     mongoDb(data).catch(console.dir);
   });
-  console.log("running a task every 2sec ");
+  console.log("running a task every 1 hr ");
 });
 
 function timeMin() {
   const d = new Date();
   let minutes = d.getMinutes();
   const arrOfDigits = Array.from(String(minutes), Number);
-  console.log(arrOfDigits);
+  // console.log(arrOfDigits);
   let lastMi;
   if (arrOfDigits[1] != null) {
-    console.log("not null");
+    // console.log("not null");
 
     lastMi = arrOfDigits[1];
-    console.log(lastMi);
+    // console.log(lastMi);
   } else {
-    console.log("null");
+    // console.log("null");
     lastMi = arrOfDigits[0];
-    console.log(lastMi);
+    // console.log(lastMi);
   }
 
   if (lastMi <= 4) {
@@ -345,7 +345,7 @@ async function mongoDb(data) {
     );
 
     console.log(
-      `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`
+      `${result.matchedCount} yesterday updated ${result.modifiedCount} document(s) ${timeUpdate}`
     );
   } finally {
     // Ensures that the client will close when you finish/error

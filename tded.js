@@ -43,8 +43,8 @@ async function loopE(number, textTitle) {
     })
   );
 
-  console.log(rowS[number]);
-  console.log(rowS.length);
+  // console.log(rowS[number]);
+  // console.log(rowS.length);
 
   const rowsTr = await rowS[number].$$("tr", (tds) =>
     tds.map((tr) => {
@@ -65,7 +65,7 @@ async function loopE(number, textTitle) {
       (elementTd1) => elementTd1.outerHTML,
       elementTd1
     );
-    console.log(textTd1);
+    // console.log(textTd1);
 
     dataHtml += textTd1;
   }
@@ -77,7 +77,7 @@ async function loopE(number, textTitle) {
   };
   await page.close();
   browser.close();
-  console.log(JsonHtml);
+  // console.log(JsonHtml);
   return JsonHtml;
 }
 
@@ -89,7 +89,7 @@ async function mongoDb(data, textTitle) {
 
   let client;
   if (!client) {
-    console.log("client connecting");
+    console.log("client connecting tded");
     // client = await MongoClient.connect(finalUrlMongo);
     client = await MongoClient.connect(mongoUrl1);
   }
@@ -115,7 +115,7 @@ async function mongoDb(data, textTitle) {
     );
 
     console.log(
-      `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`
+      `${result.matchedCount}Tded document(s), updated ${result.modifiedCount} document(s) ${timeUpdate}`
     );
   } finally {
     // Ensures that the client will close when you finish/error
@@ -154,3 +154,27 @@ getData(0, "tded1")
       mongoDb(data, "tded4").catch(console.dir);
     })
   )
+
+
+cron.schedule("0 * * * *", () => {
+getData(0, "tded1")
+  .then((data) => {
+    mongoDb(data, "tded1").catch(console.dir);
+  })
+  .then(
+    getData(1,"tded2").then((data) => {
+      mongoDb(data, "tded2").catch(console.dir);
+    })
+  )
+  .then(
+    getData(2, "tded3").then((data) => {
+      mongoDb(data, "tded3").catch(console.dir);
+    })
+  )
+  .then(
+    getData(3, "tded4").then((data) => {
+      mongoDb(data, "tded4").catch(console.dir);
+    })
+  )
+})
+
