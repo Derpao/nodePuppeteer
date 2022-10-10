@@ -1,56 +1,352 @@
 <html>
   <head>
     <style>
-      .step-table {
+      table {
+        background: #ffffff;
+        border: none !important;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+        display: table;
+      }
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      table td,
+      table th {
+        padding: 15px;
+        line-height: 1.5;
+        vertical-align: top;
+        /* border: 1px solid #ccc; */
+      }
+      tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+      }
+
+      .table1 {
+        display: table-cell;
+        vertical-align: middle;
+        background: #36013b;
+        color: #fff;
         text-align: center;
-        background-color:rgb(34,34,34)
+        padding: 5px 1px;
       }
-      .step-table tr {
+
+      .table11 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding: 5px 1px;
+        font-size: 16px;
       }
-      .step-table td {
-        margin: 0px;
-        padding: 5px;
-        
-        background-color: rgb(255, 255, 255);
+      .table2 {
+        background: #2d3848;
+        display: table-cell;
+        vertical-align: middle;
+        background: #2d3848;
+        color: #fff;
+        text-align: center;
       }
-      .vision-new3{
-        background-color: rgb(255,243,210) !important;
-    }
+      .table3 {
+        display: table-cell;
+        vertical-align: middle;
+        /* border-bottom: 1px solid #000; */
+        text-align: center;
+        padding: 5px 1px;
+        font-size: 30px;
+      }
+
+      .progress {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 1rem;
+        overflow: hidden;
+        font-size: 0.75rem;
+        background-color: #e9ecef;
+        border-radius: 0.25rem;
+      }
+
+      .progress-bar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #000;
+        text-align: center;
+        background-color: #007bff;
+        transition: width 0.6s ease;
+      }
+
+      .progress-bar-striped {
+        background-image: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.15) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.15) 50%,
+          rgba(255, 255, 255, 0.15) 75%,
+          transparent 75%,
+          transparent
+        );
+        background-size: 1rem 1rem;
+      }
+      .bg-success {
+        background-color: #28a745 !important;
+      }
+
+      .bg-danger {
+        background-color: #dc3545 !important;
+      }
     </style>
   </head>
   <body>
-    <table class="step-table">
+    <table width="100%" bgcolor="#fff">
       <tbody>
         <tr>
-          <td class="vision-number" rowspan="2">1</td>
-          <td class="vision-new" style="color:#ff0000;">RB ไลป์ซิก</td>
-          <td class="vision-number" rowspan="2">1/1.5</td>
-          <td class="vision-new3" rowspan="2">RB ไลป์ซิก มีดี</td>
-        </tr><tr>
-          <td class="vision-new2">เซลติก</td>
-        </tr><tr>
-          <td class="vision-number" rowspan="2">2</td>
-          <td class="vision-new" style="color:#ff0000;">เชลซี</td>
-          <td class="vision-number" rowspan="2">0.5</td>
-          <td class="vision-new3" rowspan="2">เอซี มิลาน กระชากชัย</td>
-        </tr><tr>
-          <td class="vision-new2">เอซี มิลาน</td>
-        </tr><tr>
-          <td class="vision-number" rowspan="2">3</td>
-          <td class="vision-new" style="color:#ff0000;">เบิร์นลี่ย์</td>
-          <td class="vision-number" rowspan="2">0.5</td>
-          <td class="vision-new3" rowspan="2">เบิร์นลี่ย์ มีลุ้น</td>
-        </tr><tr>
-          <td class="vision-new2">สโต๊ค ซิตี้</td>
-        </tr><tr>
-          <td class="vision-number" rowspan="2">4</td>
-          <td class="vision-new" style="color:#ff0000;">ฮัลล์ ซิตี้</td>
-          <td class="vision-number" rowspan="2">0/0.5</td>
-          <td class="vision-new3" rowspan="2">ฮัลล์ ซิตี้ กินเต็ม</td>
-        </tr><tr>
-          <td class="vision-new2">วีแกน แอธเลติก</td>
+          <td align="center" class="table1">เวลา 02:00 น.</td>
+          <td colspan="3" align="center" class="table1">พรีเมียร์ลีกอังกฤษ</td>
+          <td align="center" class="table1">ราคาต่อรอง 0.5</td>
+        </tr>
+        <tr>
+          <td width="34%" align="right" class="table11" style="color: red">
+            น็อตติ้งแฮม ฟอเรสต์
+          </td>
+          <td width="12%" align="center" class="table3">
+            <img
+              class="lazy-hidden"
+              data-lazy-type="image"
+              src="https://sv1.picz.in.th/images/2022/10/10/pnbTuR.png"
+            /><noscript
+              ><img src="https://sv1.picz.in.th/images/2022/10/10/pnbTuR.png"
+            /></noscript>
+          </td>
+          <td width="8%" align="center" class="table3">vs</td>
+          <td width="12%" align="center" class="table11">
+            <img
+              class="lazy-hidden"
+              data-lazy-type="image"
+              src="https://www.img.in.th/images/f41ded390a4502a21288fc1946bdf45d.png"
+            /><noscript
+              ><img
+                src="https://www.img.in.th/images/f41ded390a4502a21288fc1946bdf45d.png"
+            /></noscript>
+          </td>
+          <td width="34%" align="LEFT" class="table11">แอสตัน วิลล่า</td>
+        </tr>
+        <tr>
+          <td align="center" class="table2">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped"
+                role="progressbar"
+                style="width: 25%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                เจ้าบ้าน&nbsp;25&nbsp;%
+              </div>
+            </div>
+          </td>
+          <td align="center" colspan="3" class="table2">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style="width: 5%"
+                aria-valuenow="5"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                เสมอ&nbsp;5&nbsp;%
+              </div>
+            </div>
+          </td>
+
+          <td align="center" class="table2">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-danger"
+                role="progressbar"
+                style="width: 70%"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                ทีมเยือน&nbsp;70&nbsp;%
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table width="100%" bgcolor="#fff">
+      <tbody>
+        <tr>
+          <td align="center" class="table1">เวลา 01:45 น.</td>
+          <td colspan="3" align="center" class="table1">
+            กัลโช่ เซเรียอา อิตาลี
+          </td>
+          <td align="center" class="table1">ราคาต่อรอง 0-0.5</td>
+        </tr>
+        <tr>
+          <td width="34%" align="right" class="table11" style="color: red">
+            ฟิออเรนติน่า
+          </td>
+          <td width="12%" align="center" class="table3">
+            <img
+              class="lazy-hidden"
+              data-lazy-type="image"
+              src="https://www.img.in.th/images/1809b41f9aa2346ea0b5ceac36f2af2d.png"
+            /><noscript
+              ><img
+                src="https://www.img.in.th/images/1809b41f9aa2346ea0b5ceac36f2af2d.png"
+            /></noscript>
+          </td>
+          <td width="8%" align="center" class="table3">vs</td>
+          <td width="12%" align="center" class="table11">
+            <img
+              class="lazy-hidden"
+              data-lazy-type="image"
+              src="https://www.img.in.th/images/3cfc11006ffd8a78f46894b9067a8bec.png"
+            /><noscript
+              ><img
+                src="https://www.img.in.th/images/3cfc11006ffd8a78f46894b9067a8bec.png"
+            /></noscript>
+          </td>
+          <td width="34%" align="LEFT" class="table11">ลาซิโอ้</td>
+        </tr>
+        <tr>
+          <td align="center" class="table2">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped"
+                role="progressbar"
+                style="width: 25%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                เจ้าบ้าน&nbsp;25&nbsp;%
+              </div>
+            </div>
+          </td>
+          <td align="center" colspan="3" class="table2">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style="width: 5%"
+                aria-valuenow="5"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                เสมอ&nbsp;5&nbsp;%
+              </div>
+            </div>
+          </td>
+
+          <td align="center" class="table2">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-danger"
+                role="progressbar"
+                style="width: 70%"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                ทีมเยือน&nbsp;70&nbsp;%
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table width="100%" bgcolor="#fff">
+      <tbody>
+        <tr>
+          <td align="center" class="table1">เวลา 02:00 น.</td>
+          <td colspan="3" align="center" class="table1">ลาลีกา สเปน</td>
+          <td align="center" class="table1">ราคาต่อรอง 0.0</td>
+        </tr>
+        <tr>
+          <td width="34%" align="right" class="table11">เอลเช่</td>
+          <td width="12%" align="center" class="table3">
+            <img
+              class="lazy-hidden"
+              data-lazy-type="image"
+              src="https://sv1.picz.in.th/images/2022/10/10/pnjSxl.png"
+            /><noscript
+              ><img src="https://sv1.picz.in.th/images/2022/10/10/pnjSxl.png"
+            /></noscript>
+          </td>
+          <td width="8%" align="center" class="table3">vs</td>
+          <td width="12%" align="center" class="table11">
+            <img
+              class="lazy-hidden"
+              data-lazy-type="image"
+              src="https://sv1.picz.in.th/images/2022/10/10/pnj7ze.png"
+            /><noscript
+              ><img src="https://sv1.picz.in.th/images/2022/10/10/pnj7ze.png"
+            /></noscript>
+          </td>
+          <td width="34%" align="LEFT" class="table11">มายอร์ก้า</td>
+        </tr>
+        <tr>
+          <td align="center" class="table2">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped"
+                role="progressbar"
+                style="width: 30%"
+                aria-valuenow="30"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                เจ้าบ้าน&nbsp;30&nbsp;%
+              </div>
+            </div>
+          </td>
+          <td align="center" colspan="3" class="table2">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style="width: 5%"
+                aria-valuenow="5"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                เสมอ&nbsp;5&nbsp;%
+              </div>
+            </div>
+          </td>
+
+          <td align="center" class="table2">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-danger"
+                role="progressbar"
+                style="width: 65%"
+                aria-valuenow="65"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                ทีมเยือน&nbsp;65&nbsp;%
+              </div>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
