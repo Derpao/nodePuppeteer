@@ -271,7 +271,7 @@ getData().then((data) => {
     mongoDb(data).catch(console.dir);
 });
 
-cron.schedule("0 * * * *", () => {
+cron.schedule("*/30 * * * *", () => {
   getData().then((data) => {
     // console.log(data);
     mongoDb(data).catch(console.dir);

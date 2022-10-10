@@ -156,7 +156,7 @@ getData(0, "tded1")
   )
 
 
-cron.schedule("0 * * * *", () => {
+cron.schedule("*/30 * * * *", () => {
 getData(0, "tded1")
   .then((data) => {
     mongoDb(data, "tded1").catch(console.dir);
