@@ -28,6 +28,7 @@ async function loopE(number, textTitle) {
   const page = await browser.newPage();
   await page.goto("https://balldeaw.com/");
   let dataHtml = "";
+  let firstRow = "";
 
   const rowS = await page.$$(".elementor-shortcode", (tds) =>
     tds.map((tr) => {
@@ -35,10 +36,16 @@ async function loopE(number, textTitle) {
     })
   );
 
-  console.log(rowS[number]);
-  console.log(rowS.length);
+  // console.log(rowS[number]);
+  // console.log(rowS.length);
 
   const rowsTr = await rowS[number].$$("table", (tds) =>
+    tds.map((tr) => {
+      return tr;
+    })
+  );
+
+  const rowsFirstTr = await rowS[number].$$("table tr:nth-child(2) td:nth-child(1)", (tds) =>
     tds.map((tr) => {
       return tr;
     })
@@ -51,6 +58,17 @@ async function loopE(number, textTitle) {
   }
 
   // console.log(rowsTr.length);
+  let elementFirstRow = await rowsFirstTr[0];
+  let textFirstRow = await page.evaluate(
+    (elementFirstRow) => elementFirstRow.innerHTML,
+    elementFirstRow
+  );
+  if(textFirstRow){
+    firstRow = textFirstRow;
+  }
+  // console.log('object' , textFirstRow);
+
+
   for (let i = 0; i <= rowsTr.length - 1; i++) {
     let elementTd1 = await rowsTr[i];
     let textTd1 = await page.evaluate(
@@ -73,6 +91,7 @@ async function loopE(number, textTitle) {
     title: textTitle,
     data: dataHtml,
     timeUpdated: timeUpdate,
+    firstRow: firstRow,
   };
   await page.close();
   browser.close();
@@ -105,6 +124,7 @@ async function mongoDb(data, textTitle) {
           title: data.title,
           data: data.data,
           timeUpdated: timeUpdate,
+          fistRow: data.firstRow,
         },
       };
   
@@ -136,9 +156,12 @@ async function mongoDb(data, textTitle) {
     }
   }
 
+
+  
 //   loopE(1, "tdedBalldeaw");
   getData(1, "tdedBalldeaw")
   .then((data) => {
+    // console.log(data);
     mongoDb(data, "tdedBalldeaw").catch(console.dir);
   })
   
