@@ -22,10 +22,35 @@ Object.defineProperty(Date.prototype, "YYYYMMDDHHMMSS", {
 
 let timeUpdate;
 
+var browser = await puppeteer.launch({
+  "headless": false,
+  "defaultViewport": null,
+  "args": ['--start-maximized'],
+});
+var page = await browser.newPage();
+
+async function openBrowser(){
+  
+  
+}
+
+
 async function loopE(number, textTitle) {
   timeUpdate = new Date().YYYYMMDDHHMMSS();
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+  
+  if(browser.isConnected()){
+    console.log(browser.isConnected());
+  } else {
+    console.log("page is not open");
+     browser = await puppeteer.launch({
+      "headless": false,
+      "defaultViewport": null,
+      "args": ['--start-maximized'],
+    });
+     page = await browser.newPage();
+
+  }
+
   await page.goto("https://www.goal.co/");
   await page.waitForSelector("h1");
 
@@ -39,6 +64,16 @@ async function loopE(number, textTitle) {
     propertyJsHandles.map((handle) => handle.jsonValue())
   );
   console.log(hrefs2);
+  // setTimeout(() => {
+  //   console.log("Delayed for 1 second.");
+  //    page.reload();
+  // }, "1000")
+  
 }
+// openBrowser()
 
-loopE();
+cron.schedule("*/10 * * * * *", () => {
+  openBrowser()
+  loopE();
+  console.log("running a task every 10 sec ");
+});

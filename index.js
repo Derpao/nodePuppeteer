@@ -22,10 +22,21 @@ Object.defineProperty(Date.prototype, "YYYYMMDDHHMMSS", {
 
 let timeUpdate; 
 
+var browser = await puppeteer.launch();
+var page = await browser.newPage();
 async function loopE() {
   timeUpdate = new Date().YYYYMMDDHHMMSS();
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+  // const browser = await puppeteer.launch();
+  // const page = await browser.newPage();
+
+  if(browser.isConnected()){
+    console.log(browser.isConnected());
+  } else {
+    console.log("page is not open");
+     browser = await puppeteer.launch();
+     page = await browser.newPage();
+
+  }
   await page.goto("https://www.goal.co/");
   let dataHtml = "";
 
@@ -246,8 +257,8 @@ async function loopE() {
     data: dataHtml,
     timeUpdated: timeUpdate,
   };
-  await page.close();
-  browser.close();
+  // await page.close();
+  // browser.close();
   return JsonHtml;
 }
 
@@ -267,7 +278,7 @@ async function getData() {
 
 cron.schedule("*/10 * * * * *", () => {
   getData().then((data) => {
-    // console.log(data);
+    // console.log(data); 
     mongoDb(data).catch(console.dir);
   });
   console.log("running a task every 10 sec ");
